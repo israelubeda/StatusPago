@@ -32,7 +32,6 @@
     'data': [
         #'security/ir.model.access.csv',
         #'security/groups.xml',
-        #'views/assets.xml',
         'views/sale.xml',
 
     ],
