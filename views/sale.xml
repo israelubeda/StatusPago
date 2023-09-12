@@ -1,19 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <record id="view_sale_order_tree_inherit" model="ir.ui.view">
-      <field name="name">sale.order.tree.inherit</field>
-      <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale.view_order_tree"/>
-      <field name="arch" type="xml">
-          <field name="partner_id" position="after">
-              <field name="invoice_status" style="background-color: 
-                #FF0000; color: #FFFFFF" 
-                attrs="{'invisible': [('invoice_status','=','paid')]}"/>
-              <field name="invoice_status" style="background-color: 
-                #00FF00; color: #000000" 
-                attrs="{'invisible': [('invoice_status','!=','paid')]}"/>
-          </field>
-      </field>
-    </record>
+    <field name="name">sale.order.tree.inherit</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_quotation_tree"/>
+    <field name="arch" type="xml">
+        <field name="state" position="after">
+            <field name="invoice_status" attrs="{'invisible': [('invoice_status','=','paid')]}"/>
+            <field name="invoice_status" attrs="{'invisible': [('invoice_status','!=','paid')]}"/>
+        </field>
+    </field>
+</record>
 
 </odoo>
